@@ -6,7 +6,7 @@ export const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>🎮 Hunt3R's Stream</h1>
-        <p>Ласкаво просимо на мій сайт!</p>
+        <p>Ласкаво прошу на мій сайт!</p>
         <div className="links">
           <a href="https://twitch.tv/hunt3r_wtf" target="_blank" rel="noopener noreferrer">
             📺 Twitch
