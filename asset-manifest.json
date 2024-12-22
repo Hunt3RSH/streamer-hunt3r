@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/streamer.hunt3r/static/js/main.304b403a.js",
-    "index.html": "/streamer.hunt3r/index.html",
-    "main.304b403a.js.map": "/streamer.hunt3r/static/js/main.304b403a.js.map"
+    "main.js": "/Streamer-Hunt3R/static/js/main.b09e257c.js",
+    "index.html": "/Streamer-Hunt3R/index.html",
+    "main.b09e257c.js.map": "/Streamer-Hunt3R/static/js/main.b09e257c.js.map"
   },
   "entrypoints": [
-    "static/js/main.304b403a.js"
+    "static/js/main.b09e257c.js"
   ]
 }
