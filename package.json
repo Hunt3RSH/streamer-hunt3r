@@ -2,7 +2,7 @@
   "name": "streamer-hunt3r",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hunt3rsh.github.io/Streamer-Hunt3R/",
+  "homepage": "https://hunt3rsh.github.io/streamer-hunt3r/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
