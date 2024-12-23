@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.js": "/Streamer-Hunt3R/static/js/main.3e67ff52.js",
+    "main.js": "/Streamer-Hunt3R/static/js/main.24215f35.js",
+    "static/js/230.8bd04ebc.chunk.js": "/Streamer-Hunt3R/static/js/230.8bd04ebc.chunk.js",
     "index.html": "/Streamer-Hunt3R/index.html",
-    "main.3e67ff52.js.map": "/Streamer-Hunt3R/static/js/main.3e67ff52.js.map"
+    "main.24215f35.js.map": "/Streamer-Hunt3R/static/js/main.24215f35.js.map",
+    "230.8bd04ebc.chunk.js.map": "/Streamer-Hunt3R/static/js/230.8bd04ebc.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3e67ff52.js"
+    "static/js/main.24215f35.js"
   ]
 }
