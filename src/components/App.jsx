@@ -1,29 +1,39 @@
+import { Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Blocks } from 'react-loader-spinner';
+import AboutMe from 'views/About/About';
+import Layout from './Layout/Layout';
 import { GlobalStyles } from 'utils/GlobalStyle';
+// import NotFound from 'views/404/404';
+
+const HomeView = lazy(() => import('views/HomeView'));
+
 
 export const App = () => {
   return (
     <>
-    <div className="App">
-      <header className="App-header">
-        <h1>🎮 Hunt3R's Stream</h1>
-        <p>Ласкаво прошу на мій сайт!</p>
-        <div className="links">
-          <a href="https://twitch.tv/hunt3r_wtf" target="_blank" rel="noopener noreferrer">
-            📺 Twitch
-          </a>
-          <a href="https://discord.gg/CSMdbPCHXf" target="_blank" rel="noopener noreferrer">
-            💬 Discord
-          </a>
-          <a href="https://github.com/Hunt3RSH" target="_blank" rel="noopener noreferrer">
-            🔗 GitHub
-          </a>
-        </div>
-        <p>
-          Підтримайте стрімера: <a href="https://send.monobank.ua/jar/8GgAujGTyF">Посилання на донат</a>
-        </p>
-      </header>
-    </div>
-      <GlobalStyles />
+      <Suspense
+        fallback={
+          <Blocks
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="loaderStyle"
+          />
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomeView />} />
+            <Route path="about" element={<AboutMe />} />
+            {/* <Route path="*" element={<Comm />} /> */}
+          </Route>
+        </Routes>
+        <GlobalStyles />
+      </Suspense>
     </>
   );
 };
+
