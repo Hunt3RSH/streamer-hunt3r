@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { Blocks } from 'react-loader-spinner';
 import AboutMe from 'views/About';
-import Layout from './Layout/Layout';
+import Layout from './Layout';
 import { GlobalStyles } from 'utils/GlobalStyle';
 // import NotFound from 'views/404/404';
 
