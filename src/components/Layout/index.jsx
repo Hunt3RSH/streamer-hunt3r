@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Blocks } from 'react-loader-spinner';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const Layout = () => (
     <div>
@@ -19,7 +20,8 @@ const Layout = () => (
         }
       >
         <Outlet />
-      </Suspense>
+    </Suspense>
+    <Footer />
     </div>
 );
 

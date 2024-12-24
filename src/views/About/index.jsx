@@ -1,5 +1,8 @@
 const AboutMe = () => (
   <div className="about-me">
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
     <h2>Про мене</h2>
     <p>
       Привіт! Я Hunt3R — ентузіаст геймінгу та стрімінгу. Люблю створювати контент,
