@@ -6,6 +6,7 @@ import Layout from './Layout';
 import { GlobalStyles } from 'utils/GlobalStyle';
 import BotCommands from 'views/BotCommands';
 import MySetup from 'views/MySetup';
+import NotFound from 'views/404';
 
 
 const HomeView = lazy(() => import('views/HomeView'));
@@ -31,7 +32,8 @@ export const App = () => {
             <Route index element={<HomeView />} />
             <Route path="about" element={<AboutMe />} />
             <Route path="commands" element={<BotCommands />} />
-            <Route path="setup" element={<MySetup/>} />
+            <Route path="setup" element={<MySetup />} />
+            <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>
         <GlobalStyles />

@@ -71,4 +71,7 @@ a {
         cursor: pointer;
     }
   }
+  .active {
+    color: #2196f3;
+  }
 `;
