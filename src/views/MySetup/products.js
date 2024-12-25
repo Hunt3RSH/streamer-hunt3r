@@ -5,6 +5,7 @@ import mice from './img/mice.png';
 import klava from './img/Klava.png';
 import monitore from './img/msi.png';
 import kovrik from './img/Kover.png';
+import dual from './img/dual.png';
 
 const products = [
   {
@@ -112,6 +113,16 @@ const products = [
     img: {
       src: kovrik,
       alt: 'Коврик',
+    },
+  },
+  {
+    name: 'Геймпад',
+    info: 'DualShock 4',
+
+    highlights: ['Підключення: Бездротове', 'Живлення: Акумулятор'],
+    img: {
+      src: dual,
+      alt: 'Геймпад',
     },
   },
 ];
