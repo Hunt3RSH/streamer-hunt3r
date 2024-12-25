@@ -1,8 +1,8 @@
 
 export default function Example() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 pb-3 sm:pb-3 lg:pb-3">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 sm:mt-8 lg:mt-32">
+    <div className="relative isolate overflow-hidden bg-gray-900 pb-12 sm:pb-10 lg:pb-16">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-20 sm:mt-28 lg:mt-36">
         <div className="mx-auto flex items-center justify-between">
             <p className="text-lg text-gray-300">
                 Build with 💖 by Hunt3R

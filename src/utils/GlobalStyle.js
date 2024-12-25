@@ -34,7 +34,7 @@ ul {
 a {
     transition: all 0.5s ease-out;
     :hover {
-      color: #9333ea;
+      color: #2196f3;
     }
 }
 :root {
@@ -66,7 +66,7 @@ a {
     border: 1px solid #111827;
     transition: all 0.5s ease-out;
     &:hover {
-        border: 1px solid #9333ea;
+        /* border: 1px solid #9333ea; */
         outline: none;
         cursor: pointer;
     }
