@@ -1,6 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+@media screen and (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  ::-webkit-scrollbar-thumb {
+    background: #9333ea;
+  }
+}
 
 body {
   margin: 0;
@@ -13,6 +30,12 @@ body {
 ul {
     list-style: none;
     padding-left: 0
+}
+a {
+    transition: all 0.5s ease-out;
+    :hover {
+      color: #9333ea;
+    }
 }
 :root {
     --bg-color: #1b2838;
@@ -33,5 +56,19 @@ ul {
   .InProgress {
     color: gray;
     animation: pulse 1s infinite;
+  }
+  .ButtonStyled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 92px;
+    border-radius: 4px;
+    border: 1px solid #111827;
+    transition: all 0.5s ease-out;
+    &:hover {
+        border: 1px solid #9333ea;
+        outline: none;
+        cursor: pointer;
+    }
   }
 `;

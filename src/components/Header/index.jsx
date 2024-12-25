@@ -1,25 +1,3 @@
-// import { NavLink } from 'react-router-dom';
-// const Header = () => (
-//     <header className="App-header">
-//         <h1>Hunt3R_WTF TTV</h1>
-//         <nav>
-//         <ul className="nav-links">
-//             <li>
-//             <NavLink to="/">Головна</NavLink>
-//             </li>
-//             <li>
-//             <NavLink to="/about">Про мене</NavLink>
-//             </li>
-//             <li>
-//             <a className='InProgress' to="*" onClick={event => event.preventDefault()}>Бот "Команди"</a>
-//             </li>
-//         </ul>
-//         </nav>
-//     </header>
-// );
-
-// export default Header;
-
 'use client'
 
 import { useState } from 'react'
@@ -31,17 +9,15 @@ import logo from '../img/favicon.png'
 const navigation = [
   { name: 'Головна', to: '/' },
   { name: 'Про мене', to: '/about' },
-//   { name: 'Marketplace', href: '#' },
-//   { name: 'Company', href: '#' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-white">
-      <header className="inset-x-0 top-0 z-50 bg-white">
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+    <div className="bg-slate-800">
+      <header className="mx-auto max-w-7xl px-6 inset-x-0 top-0 z-50 bg-slate-800">
+        <nav aria-label="Global" className="flex items-center justify-between py-6 lg:py-0">
           <div className="flex">
             <NavLink to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Hunt3R TTV</span>
@@ -56,7 +32,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="size-6" />
@@ -64,7 +40,7 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12 pl-12">
             {navigation.map((item) => (
-              <NavLink key={item.name} to={item.to} className="text-sm/6 font-semibold text-gray-900">
+              <NavLink key={item.name} to={item.to} className="block px-0 py-6 text-sm text-gray-200 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                 {item.name}
               </NavLink>
             ))}
@@ -74,7 +50,7 @@ export default function Header() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <NavLink to="#" className="-m-1.5 p-1.5">
+              <NavLink to="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Hunt3R TTV</span>
                 <img
                   alt=""
