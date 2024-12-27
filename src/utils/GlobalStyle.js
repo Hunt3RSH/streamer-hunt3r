@@ -21,9 +21,7 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +32,7 @@ ul {
 a {
     transition: all 0.5s ease-out;
     :hover {
-      color: #2196f3;
+      color: #3b82f6;
     }
 }
 :root {
@@ -72,6 +70,20 @@ a {
     }
   }
   .active {
+    position: relative;
     color: #2196f3;
+    @media screen and (min-width: 1024px) {
+    ::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #2196f3;
+    }
+}
+
   }
 `;
