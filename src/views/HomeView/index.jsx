@@ -23,7 +23,7 @@ const HomeView = () => (
           <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             МОНАПідримка.{' '}
             <a
-              href="/"
+              href="https://send.monobank.ua/jar/8GgAujGTyF"
               className="font-semibold text-indigo-600 pointer-events-auto"
             >
               <span aria-hidden="true" className="absolute inset-0" />
