@@ -23,7 +23,9 @@ export default function Header() {
         >
           <div className="flex">
             <span className="sr-only">Hunt3R TTV</span>
-            <img alt="" src={logo} className="h-8 w-auto" />
+            <a href="/streamer-hunt3r">
+              <img alt="" src={logo} className="h-8 w-auto" />
+            </a>
           </div>
           <div className="flex lg:hidden">
             <button

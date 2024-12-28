@@ -36,7 +36,7 @@ a {
     }
 }
 :root {
-    --bg-color: #1b2838;
+    --bg-color: white;
     --header-color: #171a21;
     --text-color: #c7d5e0;
     --link-color: #66c0f4;
@@ -86,4 +86,7 @@ a {
     }
   }
   }
+.no-pointer {
+    pointer-events: none;
+}
 `;
