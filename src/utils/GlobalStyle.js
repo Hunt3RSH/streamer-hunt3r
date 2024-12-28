@@ -72,6 +72,7 @@ a {
   .active {
     position: relative;
     color: #2196f3;
+    transition: all 0.5s ease-out;
     @media screen and (min-width: 1024px) {
     ::after {
     position: absolute;
@@ -83,7 +84,6 @@ a {
     border-radius: 2px;
     background-color: #2196f3;
     }
-}
-
+  }
   }
 `;
