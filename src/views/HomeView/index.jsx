@@ -24,6 +24,8 @@ const HomeView = () => (
             МОНАПідримка.{' '}
             <a
               href="https://send.monobank.ua/jar/8GgAujGTyF"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-semibold text-indigo-600 pointer-events-auto"
             >
               <span aria-hidden="true" className="absolute inset-0" />
