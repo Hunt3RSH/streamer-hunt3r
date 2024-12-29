@@ -9,6 +9,8 @@ const navigation = [
   { name: 'Про мене', to: '/about' },
   { name: 'BOT команди', to: '/commands' },
   { name: 'Setup', to: '/setup' },
+  { name: 'Ігри', to: '/game' },
+  { name: 'Колеги', to: '/streamers' },
 ];
 
 export default function Header() {
@@ -37,13 +39,13 @@ export default function Header() {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 ml-12">
+          <div className="hidden lg:flex ml-12">
             {navigation.map(item => (
               <NavLink
                 key={item.name}
                 to={item.to}
                 aria-current={item.current ? 'page' : undefined}
-                className="block px-0 py-6 text-sm text-gray-200 data-[focus]:bg-gray-100 data-[focus]:outline-none font-semibold relative"
+                className="block px-2 py-6 text-sm text-gray-200 data-[focus]:bg-gray-100 data-[focus]:outline-none font-semibold relative"
               >
                 {item.name}
               </NavLink>

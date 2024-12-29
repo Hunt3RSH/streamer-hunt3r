@@ -7,6 +7,8 @@ import { GlobalStyles } from 'utils/GlobalStyle';
 import BotCommands from 'views/BotCommands';
 import MySetup from 'views/MySetup';
 import NotFound from 'views/404';
+import SteamGames from 'views/MyGame';
+import OurTeam from 'views/OurTeam';
 
 const HomeView = lazy(() => import('views/HomeView'));
 
@@ -31,6 +33,8 @@ export const App = () => {
             <Route path="about" element={<AboutMe />} />
             <Route path="commands" element={<BotCommands />} />
             <Route path="setup" element={<MySetup />} />
+            <Route path="game" element={<SteamGames />} />
+            <Route path="streamers" element={<OurTeam />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
