@@ -1,6 +1,6 @@
 export default function MyLinks() {
   return (
-    <div className="relative bg-white z-10 mb-14">
+    <div className="relative bg-white z-10 mb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg/8 font-semibold text-gray-900">
           Мої посилання
