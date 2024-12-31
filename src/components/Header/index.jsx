@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Setup', to: '/setup' },
   { name: 'Ігри', to: '/game' },
   { name: 'Колеги', to: '/streamers' },
+  { name: 'Стріми', to: '/laststream' },
 ];
 
 export default function Header() {

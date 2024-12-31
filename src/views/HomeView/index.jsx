@@ -61,8 +61,8 @@ const HomeView = () => (
         </div>
       </div>
     </div>
-    <MyLinks />
     <Rules />
+    <MyLinks />
   </>
 );
 

@@ -1,3 +1,7 @@
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import { useEffect, useState } from 'react';
+import { getUser } from 'utils/API/api';
+
 const people = [
   {
     name: 'minis0ul',
@@ -22,7 +26,7 @@ const people = [
   },
   {
     name: 'MrHEIS_ua',
-    role: 'Стрімить в основному після роботи',
+    role: 'Стрімить після роботи',
     href: 'https://www.twitch.tv/mrheis_ua',
     imageUrl:
       'https://static-cdn.jtvnw.net/jtv_user_pictures/e6fd3751-5057-44c3-836f-74dc80308929-profile_image-300x300.png',
@@ -45,6 +49,25 @@ const people = [
 ];
 
 export default function OurTeam() {
+  const [statuses, setStatuses] = useState({}); // Зберігаємо онлайн-статус кожного стрімера
+
+  useEffect(() => {
+    const fetchStatuses = async () => {
+      const statusUpdates = {};
+      for (const person of people) {
+        const userData = await getUser('hunt3r_wtf', person.name); // Отримуємо інформацію про стрімера
+        if (userData.data?.length > 0) {
+          statusUpdates[person.name] = 'Онлайн';
+        } else {
+          statusUpdates[person.name] = 'Оффлайн';
+        }
+      }
+      setStatuses(statusUpdates);
+    };
+
+    fetchStatuses();
+  }, []);
+
   return (
     <div className="bg-white py-24 sm:py-32 lg:pb-96">
       <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
@@ -60,26 +83,49 @@ export default function OurTeam() {
         </div>
         <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
           {people.map(person => (
-            <li key={person.name}>
+            <li
+              key={person.name}
+              className="relative border rounded-full shadow-md bg-white"
+            >
               <a
-                className="flex items-center gap-x-6"
+                className="flex items-center gap-x-6 teamLink"
                 href={person.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  alt=""
-                  src={person.imageUrl}
-                  className="size-16 rounded-full"
-                />
+                <div className="relative">
+                  <img
+                    alt=""
+                    src={person.imageUrl}
+                    width={64}
+                    height={64}
+                    className="rounded-full"
+                  />
+                  <p
+                    className={`text-xs w-full font-medium absolute -bottom-1 text-center rounded-lg px-1 ${
+                      statuses[person.name] === 'Онлайн'
+                        ? 'text-white bg-red-600'
+                        : statuses[person.name] === 'Оффлайн'
+                        ? 'text-zinc-100 bg-gray-500'
+                        : 'text-white-500 bg-gray-500'
+                    }`}
+                  >
+                    {statuses[person.name] || '...'}
+                  </p>
+                </div>
+
                 <div>
-                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
+                  <h3 className="relative text-base/6 font-semibold tracking-tight text-gray-900 lg:text-base/7">
                     {person.name}
                   </h3>
-                  <p className="text-sm/6 font-semibold text-indigo-600">
+                  <p className="text-sm/6 font-semibold text-indigo-600 lg:text-sm/6">
                     {person.role}
                   </p>
                 </div>
+                <ArrowUpRightIcon
+                  aria-hidden="true"
+                  className="size-6 absolute top-px-25 right-4 arrowIcon"
+                />
               </a>
             </li>
           ))}

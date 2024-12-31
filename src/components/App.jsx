@@ -9,6 +9,7 @@ import MySetup from 'views/MySetup';
 import NotFound from 'views/404';
 import SteamGames from 'views/MyGame';
 import OurTeam from 'views/OurTeam';
+import LastStreams from 'views/LastStreams';
 
 const HomeView = lazy(() => import('views/HomeView'));
 
@@ -35,6 +36,7 @@ export const App = () => {
             <Route path="setup" element={<MySetup />} />
             <Route path="game" element={<SteamGames />} />
             <Route path="streamers" element={<OurTeam />} />
+            <Route path="laststream" element={<LastStreams />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

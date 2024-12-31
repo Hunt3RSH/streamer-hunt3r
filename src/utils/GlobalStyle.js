@@ -112,7 +112,6 @@ a {
   }
 }
 .gameInfo {
-
   @media screen and (min-width: 1024px) {
   position: absolute;
 	display: flex;
@@ -131,6 +130,46 @@ a {
 	transition-property: opacity, transform;
   transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.loaderStyle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 1101;
+}
+.twitchLink {
+  .twitchPlay {
+    opacity: 0;
+    color: white;
+	  background-color: rgba(107, 33, 168, 0);
+	  transition-property: opacity, background-color, color;
+    transition-duration: 250ms; 
+	  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+  }
+  &:hover .twitchPlay,
+  &:focus .twitchPlay {
+   
+    opacity: 100%;
+	  background-color: rgba(107, 33, 168, 0.5);
+  }
+}
+.arrowIcon {
+  transition-property: transform;
+  transition-duration: 250ms; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.teamLink {
+  &:hover .arrowIcon,
+  &:focus .arrowIcon{
+    transform: rotate(45deg);
+  color: #2196f3;
   }
 }
 `;
