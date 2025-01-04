@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
 import logo from '../img/favicon.png';
+import { getHunt3r } from 'utils/API/api';
 
 const navigation = [
   { name: 'Головна', to: '/' },
@@ -16,13 +17,37 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [status, setStatus] = useState({});
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        const userData = await getHunt3r('hunt3r_wtf');
+        if (userData?.data?.length > 0) {
+          setStatus(prev => ({
+            ...prev,
+            hunt3r_wtf: 'Онлайн',
+          }));
+        } else {
+          setStatus(prev => ({
+            ...prev,
+            hunt3r_wtf: 'Оффлайн',
+          }));
+        }
+      } catch (error) {
+        console.error('Помилка при отриманні статусу стрімера:', error);
+      }
+    };
+
+    fetchStatus();
+  }, []);
 
   return (
     <div className="bg-slate-800">
       <header className=" px-6 inset-x-0 top-0 z-50 bg-slate-800 fixed">
         <nav
           aria-label="Global"
-          className="mx-auto flex items-center justify-between py-6 lg:py-0 lg:justify-start max-w-7xl"
+          className="mx-auto flex items-center justify-between py-6 lg:py-0 max-w-7xl"
         >
           <div className="flex">
             <span className="sr-only">Hunt3R TTV</span>
@@ -51,6 +76,32 @@ export default function Header() {
                 {item.name}
               </NavLink>
             ))}
+          </div>
+          <div className="flex justify-center flex-col items-center">
+            <a
+              href="https://www.twitch.tv/hunt3r_wtf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xs font-medium text-center rounded-full px-1 hidden hover:text-white lg:flex bottom-0 left-0 ${
+                status['hunt3r_wtf'] === 'Онлайн'
+                  ? 'text-white bg-red-600'
+                  : status['hunt3r_wtf'] === 'Оффлайн'
+                  ? 'text-zinc-100 bg-gray-500'
+                  : 'text-white-500 bg-gray-500'
+              }`}
+            >
+              {/* <VideoCameraIcon
+                aria-hidden="true"
+                className={`absolute size-9 top-0 ${
+                  status['hunt3r_wtf'] === 'Онлайн'
+                    ? 'text-white bg-red-600'
+                    : status['hunt3r_wtf'] === 'Оффлайн'
+                    ? 'text-red-700 bg-gray-500'
+                    : 'text-white-500 bg-gray-500'
+                }}`}
+              /> */}
+              {status['hunt3r_wtf'] || '...'}
+            </a>
           </div>
         </nav>
         <Dialog

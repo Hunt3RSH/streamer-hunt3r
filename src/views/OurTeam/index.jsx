@@ -49,13 +49,13 @@ const people = [
 ];
 
 export default function OurTeam() {
-  const [statuses, setStatuses] = useState({}); // Зберігаємо онлайн-статус кожного стрімера
+  const [statuses, setStatuses] = useState({});
 
   useEffect(() => {
     const fetchStatuses = async () => {
       const statusUpdates = {};
       for (const person of people) {
-        const userData = await getUser('hunt3r_wtf', person.name); // Отримуємо інформацію про стрімера
+        const userData = await getUser('hunt3r_wtf', person.name);
         if (userData.data?.length > 0) {
           statusUpdates[person.name] = 'Онлайн';
         } else {
