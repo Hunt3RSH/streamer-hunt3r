@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundImg from '../components/img/rwBg.png';
 
 export const GlobalStyles = createGlobalStyle`
 @media screen and (min-width: 768px) {
@@ -170,6 +171,17 @@ a {
   &:focus .arrowIcon{
     transform: rotate(45deg);
   color: #2196f3;
+  }
+}
+
+.bgImage {
+  background-image: url(${backgroundImg});
+  background-size: 150% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+    @media screen and (min-width: 1024px) {
+    background-size: contain;
   }
 }
 `;
