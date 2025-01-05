@@ -77,7 +77,7 @@ export default function Header() {
               </NavLink>
             ))}
           </div>
-          <div className="flex justify-center flex-col items-center">
+          <div className="hidden justify-center flex-col items-center lg:flex ">
             <a
               href="https://www.twitch.tv/hunt3r_wtf"
               target="_blank"
