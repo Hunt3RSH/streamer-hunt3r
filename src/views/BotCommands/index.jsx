@@ -88,6 +88,12 @@ const featuresFunny = [
     description: 'Розумний генератор фраз',
     icon: SparklesIcon,
   },
+  {
+    name: '!addicted',
+    description:
+      'Тільки для справжніх геймерів! Визнач, наскільки ти "залежний" від ігор.',
+    icon: SparklesIcon,
+  },
 ];
 
 export default function BotCommands() {
