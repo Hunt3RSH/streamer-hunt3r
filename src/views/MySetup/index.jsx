@@ -7,9 +7,9 @@ export default function MySetup() {
         <h2 className="text-center text-base/7 font-semibold text-indigo-600">
           вся інформація про мої девайси і систему
         </h2>
-        <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+        <h1 className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
           Мій сетап
-        </p>
+        </h1>
         <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product, index) => (
             <div

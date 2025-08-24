@@ -87,7 +87,7 @@ export default function SteamGames() {
     <div className="bg-gray-100 mt-8 lg:mt-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-          <h2 className="text-2xl font-bold text-gray-900">Ігри для стріму</h2>
+          <h1 className="text-2xl font-bold text-gray-900">Ігри для стріму</h1>
 
           <div className="mt-6 space-y-12 sm:space-y-0 lg:grid sm:grid sm:grid-cols-3 sm:gap-3 lg:grid-cols-5  lg:gap-6 lg:space-y-0">
             {callouts.map(callout => (
@@ -106,10 +106,10 @@ export default function SteamGames() {
                     className="w-full rounded-lg object-contain max-sm:h-80 1lg:aspect-auto sm:aspect-auto"
                   />
                   <div className="gameInfo">
-                    <h3 className="mt-6 text-base font-semibold text-gray-950 lg:text-gray-200">
+                    <h2 className="mt-6 text-base font-semibold text-gray-950 lg:text-gray-200">
                       <span className="absolute inset-0" />
                       {callout.name}
-                    </h3>
+                    </h2>
                     <p className="text-sm text-gray-800 lg:text-white">
                       {callout.description}
                     </p>

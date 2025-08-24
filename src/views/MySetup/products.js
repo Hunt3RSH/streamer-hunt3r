@@ -4,7 +4,7 @@ import headPhones from './img/LogiHead.png';
 import mice from './img/mice.png';
 import klava from './img/Klava.png';
 import monitore from './img/msi.png';
-import kovrik from './img/Kover.png';
+import kovrik from './img/KoverTrooper.png';
 import dual from './img/dual.png';
 
 const products = [
@@ -20,7 +20,7 @@ const products = [
     ],
     img: {
       src: asus,
-      alt: 'Ноутбук ASUS ROG Strix G15',
+      alt: 'Ноутбук стрімера: ASUS ROG Strix G15',
     },
   },
   {
@@ -36,7 +36,7 @@ const products = [
     ],
     img: {
       src: camera,
-      alt: 'Камера',
+      alt: 'Камера стрімера: Logitech C920',
     },
   },
   {
@@ -51,7 +51,7 @@ const products = [
     ],
     img: {
       src: headPhones,
-      alt: 'Наушники',
+      alt: 'Наушники стрімера: Logitech G PRO X',
     },
   },
   {
@@ -67,7 +67,7 @@ const products = [
     ],
     img: {
       src: mice,
-      alt: 'Мишка',
+      alt: 'Мишка стрімера: SteelSeries Rival 3',
     },
   },
   {
@@ -81,7 +81,7 @@ const products = [
     ],
     img: {
       src: klava,
-      alt: 'Клавіатура',
+      alt: 'Клавіатура стрімера: A4Tech Bloody B120',
     },
   },
   {
@@ -96,23 +96,23 @@ const products = [
     ],
     img: {
       src: monitore,
-      alt: 'Монітор',
+      alt: 'Монітор стрімера: MSI Optix MAG273',
     },
   },
   {
-    name: 'Коврик',
-    info: 'Hator NaVi Out of space L',
+    name: 'Ігрова поверхня',
+    info: 'RZTK Trooper',
 
     highlights: [
-      'Розмір: великий',
-      'Матеріал: тканина, гума',
-      'Поверхня: Speed',
-      'Довжина килимка: 420 мм',
-      'Ширина килимка: 500 мм',
+      'Розмір: Великий',
+      'Матеріал: Тканина, гума',
+      'Поверхня: Control, Speed',
+      'Довжина килимка: 900 мм',
+      'Ширина килимка: 400 мм',
     ],
     img: {
       src: kovrik,
-      alt: 'Коврик',
+      alt: 'Ігрова поверхня стрімера: RZTK Trooper 900 x 400 x 4 мм',
     },
   },
   {
@@ -122,7 +122,7 @@ const products = [
     highlights: ['Підключення: Бездротове', 'Живлення: Акумулятор'],
     img: {
       src: dual,
-      alt: 'Геймпад',
+      alt: 'Геймпад стрімера: DualShock 4',
     },
   },
 ];

@@ -4,7 +4,7 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 py-4 sm:px-8 sm:py-6">
         <div className="flex flex-col-reverse items-center pt-4 mt-4 lg:pt-8 lg:mt-8 border-t border-gray-800 justify-between lg:flex lg:flex-row">
           <p className="block text-sm text-gray-300 mt-6 lg:mt-0">
-            © 2024 RevenWest, Inc. All rights reserved.
+            © 2024 - © 2025 RevenWest, Inc. All rights reserved.
           </p>
           <div className="flex gap-x-4 items-center justify-center">
             <a

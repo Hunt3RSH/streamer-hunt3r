@@ -45,6 +45,13 @@ const people = [
     imageUrl:
       'https://static-cdn.jtvnw.net/jtv_user_pictures/1d1fef90-c2ce-4d00-87a4-6ca8c2f8c649-profile_image-300x300.png',
   },
+  {
+    name: 'natamrli',
+    role: 'Із точним прицілом (але це не точно)',
+    href: 'https://www.twitch.tv/natamrli',
+    imageUrl:
+      'https://static-cdn.jtvnw.net/jtv_user_pictures/9e6a5b39-4b1f-4d05-9c35-203f28d8a511-profile_image-300x300.png',
+  },
   // More people...
 ];
 
@@ -72,9 +79,9 @@ export default function OurTeam() {
     <div className="bg-white py-24 sm:py-32 lg:pb-96">
       <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-xl">
-          <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
             Мої колеги по цеху
-          </h2>
+          </h1>
           <p className="mt-6 text-lg/8 text-gray-600">
             Ми – яскрава спільнота стрімерів, які поділяють пристрасть до
             творчості, розваг і взаємодії з аудиторією. Разом ми підтримуємо
@@ -115,9 +122,9 @@ export default function OurTeam() {
                 </div>
 
                 <div>
-                  <h3 className="relative text-base/6 font-semibold tracking-tight text-gray-900 lg:text-base/7">
+                  <h2 className="relative text-base/6 font-semibold tracking-tight text-gray-900 lg:text-base/7">
                     {person.name}
-                  </h3>
+                  </h2>
                   <p className="text-sm/6 font-semibold text-indigo-600 lg:text-sm/6">
                     {person.role}
                   </p>
