@@ -1,4 +1,5 @@
 import img200 from './library2_600x900.png';
+import Description from './StreamGamesSeoDescription';
 
 const callouts = [
   {
@@ -73,6 +74,15 @@ const callouts = [
     href: 'https://store.steampowered.com/app/730/CounterStrike_2/',
   },
   {
+    name: 'Manor Lords',
+    description:
+      'Manor Lords мені піздец як зайшла! 😅 Перший запуск затягнув аж до 4-ї ранку — навіть не помітив, як час пролетів!',
+    imageSrc:
+      'https://cdn2.steamgriddb.com/grid/31d16c97a3411076b7e7bb2201abdbdf.png',
+    imageAlt: 'Manor Lords',
+    href: 'https://store.steampowered.com/app/1363080/Manor_Lords/',
+  },
+  {
     name: 'Понад 200+ ігор',
     description:
       'Якщо ти бажаєш побачити якусь гру з моєї бібліотеки Steam, можеш заглянути в неї і вибрати гру для стріму. Буду радий показати тобі щось новеньке або цікаве!',
@@ -118,6 +128,7 @@ export default function SteamGames() {
               </div>
             ))}
           </div>
+          {/* <Description /> */}
         </div>
       </div>
     </div>

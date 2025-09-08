@@ -2,7 +2,7 @@ import asus from './img/Asus.png';
 import camera from './img/LogiCam.png';
 import headPhones from './img/LogiHead.png';
 import mice from './img/mice.png';
-import klava from './img/Klava.png';
+import klava from './img/Proove Gaming Slicker Pro.png';
 import monitore from './img/msi.png';
 import kovrik from './img/KoverTrooper.png';
 import dual from './img/dual.png';
@@ -72,16 +72,19 @@ const products = [
   },
   {
     name: 'Клавіатура',
-    info: 'A4Tech Bloody B120',
+    info: 'Proove Gaming Slicker Pro',
 
     highlights: [
-      'Тип клавіатури: Мембранні',
-      'Підєднання: Дротове',
-      'Розміри: 458 x 37 x 180 мм',
+      'Тип клавіатури: Механічні',
+      'Тип механічних перемикачів: Gateron G Pro 3.0 Yellow',
+      'Вид механічних перемикачів: Лінійні',
+      'Підєднання: Комбіноване',
+      'Розміри: 384.7 x 145 x 38.3 мм',
+      'Вага: 0.998 кг',
     ],
     img: {
       src: klava,
-      alt: 'Клавіатура стрімера: A4Tech Bloody B120',
+      alt: 'Клавіатура стрімера: Proove Gaming Slicker Pro',
     },
   },
   {
