@@ -1,5 +1,5 @@
 import img200 from './library2_600x900.png';
-import Description from './StreamGamesSeoDescription';
+// import Description from './StreamGamesSeoDescription';
 
 const callouts = [
   {
