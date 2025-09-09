@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 import { getUser } from 'utils/API/api';
+import { Helmet } from 'react-helmet-async';
 
 const people = [
   {
@@ -76,68 +77,102 @@ export default function OurTeam() {
   }, []);
 
   return (
-    <div className="bg-white py-24 sm:py-32 lg:pb-96">
-      <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-        <div className="max-w-xl">
-          <h1 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-            Мої колеги по цеху
-          </h1>
-          <p className="mt-6 text-lg/8 text-gray-600">
-            Ми – яскрава спільнота стрімерів, які поділяють пристрасть до
-            творчості, розваг і взаємодії з аудиторією. Разом ми підтримуємо
-            одне одного та створюємо незабутні враження для наших глядачів.
-          </p>
-        </div>
-        <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-          {people.map(person => (
-            <li
-              key={person.name}
-              className="relative border rounded-full shadow-md bg-white"
-            >
-              <a
-                className="flex items-center gap-x-6 teamLink"
-                href={person.href}
-                target="_blank"
-                rel="noopener noreferrer"
+    <>
+      <Helmet>
+        <title>Стрімери — Наша команда 🌠</title>
+        <meta
+          name="description"
+          content="Друзі та колеги, які стрімлять з Hunt3R або підтримують його."
+        />
+        <link
+          rel="canonical"
+          href={
+            (process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/streamers'
+          }
+        />
+        <meta property="og:title" content="Стрімери — Наша команда" />
+        <meta
+          property="og:description"
+          content="Познайомтеся з командою та дізнайтеся про їхні канали."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={
+            (process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/streamers'
+          }
+        />
+        <meta
+          property="og:image"
+          content={
+            (process.env.PUBLIC_URL || '').replace(/\/$/, '') +
+            '/hunter-cover.jpg'
+          }
+        />
+      </Helmet>
+      <div className="bg-white py-24 sm:py-32 lg:pb-96">
+        <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div className="max-w-xl">
+            <h1 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+              Мої колеги по цеху
+            </h1>
+            <p className="mt-6 text-lg/8 text-gray-600">
+              Ми – яскрава спільнота стрімерів, які поділяють пристрасть до
+              творчості, розваг і взаємодії з аудиторією. Разом ми підтримуємо
+              одне одного та створюємо незабутні враження для наших глядачів.
+            </p>
+          </div>
+          <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            {people.map(person => (
+              <li
+                key={person.name}
+                className="relative border rounded-full shadow-md bg-white"
               >
-                <div className="relative">
-                  <img
-                    alt=""
-                    src={person.imageUrl}
-                    width={64}
-                    height={64}
-                    className="rounded-full"
-                  />
-                  <p
-                    className={`text-xs w-full font-medium absolute -bottom-1 text-center rounded-lg px-1 ${
-                      statuses[person.name] === 'Онлайн'
-                        ? 'text-white bg-red-600'
-                        : statuses[person.name] === 'Оффлайн'
-                        ? 'text-zinc-100 bg-gray-500'
-                        : 'text-white-500 bg-gray-500'
-                    }`}
-                  >
-                    {statuses[person.name] || '...'}
-                  </p>
-                </div>
+                <a
+                  className="flex items-center gap-x-6 teamLink"
+                  href={person.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="relative">
+                    <img
+                      alt=""
+                      src={person.imageUrl}
+                      width={64}
+                      height={64}
+                      className="rounded-full"
+                    />
+                    <p
+                      className={`text-xs w-full font-medium absolute -bottom-1 text-center rounded-lg px-1 ${
+                        statuses[person.name] === 'Онлайн'
+                          ? 'text-white bg-red-600'
+                          : statuses[person.name] === 'Оффлайн'
+                          ? 'text-zinc-100 bg-gray-500'
+                          : 'text-white-500 bg-gray-500'
+                      }`}
+                    >
+                      {statuses[person.name] || '...'}
+                    </p>
+                  </div>
 
-                <div>
-                  <h2 className="relative text-base/6 font-semibold tracking-tight text-gray-900 lg:text-base/7">
-                    {person.name}
-                  </h2>
-                  <p className="text-sm/6 font-semibold text-indigo-600 lg:text-sm/6">
-                    {person.role}
-                  </p>
-                </div>
-                <ArrowUpRightIcon
-                  aria-hidden="true"
-                  className="size-6 absolute top-px-25 right-4 arrowIcon"
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
+                  <div>
+                    <h2 className="relative text-base/6 font-semibold tracking-tight text-gray-900 lg:text-base/7">
+                      {person.name}
+                    </h2>
+                    <p className="text-sm/6 font-semibold text-indigo-600 lg:text-sm/6">
+                      {person.role}
+                    </p>
+                  </div>
+                  <ArrowUpRightIcon
+                    aria-hidden="true"
+                    className="size-6 absolute top-px-25 right-4 arrowIcon"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

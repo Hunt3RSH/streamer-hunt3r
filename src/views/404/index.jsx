@@ -1,8 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 export default function NotFound() {
   return (
     <>
+      <Helmet>
+        <title>404 — Not Found</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href={(process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/404'} />
+      </Helmet>
       <div className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-base font-semibold text-indigo-600">404</p>

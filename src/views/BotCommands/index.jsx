@@ -1,4 +1,5 @@
 import { SparklesIcon } from '@heroicons/react/24/outline';
+import { Helmet } from 'react-helmet-async';
 // import BotView from '../../components/3Dobj/BotView';
 
 const features = [
@@ -99,6 +100,36 @@ const featuresFunny = [
 export default function BotCommands() {
   return (
     <>
+      <Helmet>
+        <title>Команди бота — Hunt3RsBOT 🤖</title>
+        <meta
+          name="description"
+          content="Список команд чату Twitch від Hunt3RsBOT та цікавих функцій."
+        />
+        <link
+          rel="canonical"
+          href={(process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/commands'}
+        />
+        <meta property="og:title" content="Команди — Hunt3R BOT" />
+        <meta
+          property="og:description"
+          content="Досліджуйте корисні та цікаві команди чату, які використовуються на стрімі."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={
+            (process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/commands'
+          }
+        />
+        <meta
+          property="og:image"
+          content={
+            (process.env.PUBLIC_URL || '').replace(/\/$/, '') +
+            '/hunter-cover.jpg'
+          }
+        />
+      </Helmet>
       {/* <BotView /> */}
       <div className="bg-white py-24 sm:py-32 bgImage">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

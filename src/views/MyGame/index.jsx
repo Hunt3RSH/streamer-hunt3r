@@ -1,4 +1,5 @@
 import img200 from './library2_600x900.png';
+import { Helmet } from 'react-helmet-async';
 // import Description from './StreamGamesSeoDescription';
 
 const callouts = [
@@ -93,44 +94,66 @@ const callouts = [
 ];
 
 export default function SteamGames() {
+  const base = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+  const canonical = `${base}/game`;
   return (
-    <div className="bg-gray-100 mt-8 lg:mt-0">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-          <h1 className="text-2xl font-bold text-gray-900">Ігри для стріму</h1>
+    <>
+      <Helmet>
+        <title>Ігри для стрімів — Hunt3R’s всі ігри</title>
+        <meta
+          name="description"
+          content="Перегляньте рекомендовані ігри для стрімів та улюблені новинки з трансляцій."
+        />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content="Games — Hunt3R’s Library" />
+        <meta
+          property="og:description"
+          content="'Перегляньте рекомендовані ігри для стрімів та улюблені новинки з трансляцій.'"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={`${base}/hunter-cover.jpg`} />
+      </Helmet>
+      <div className="bg-gray-100 mt-8 lg:mt-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+            <h1 className="text-2xl font-bold text-gray-900">
+              Ігри для стріму
+            </h1>
 
-          <div className="mt-6 space-y-12 sm:space-y-0 lg:grid sm:grid sm:grid-cols-3 sm:gap-3 lg:grid-cols-5  lg:gap-6 lg:space-y-0">
-            {callouts.map(callout => (
-              <div
-                key={callout.name}
-                className="group relative overflow-hidden game rounded-lg"
-              >
-                <a
-                  href={callout.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+            <div className="mt-6 space-y-12 sm:space-y-0 lg:grid sm:grid sm:grid-cols-3 sm:gap-3 lg:grid-cols-5  lg:gap-6 lg:space-y-0">
+              {callouts.map(callout => (
+                <div
+                  key={callout.name}
+                  className="group relative overflow-hidden game rounded-lg"
                 >
-                  <img
-                    alt={callout.imageAlt}
-                    src={callout.imageSrc}
-                    className="w-full rounded-lg object-contain max-sm:h-80 1lg:aspect-auto sm:aspect-auto"
-                  />
-                  <div className="gameInfo">
-                    <h2 className="mt-6 text-base font-semibold text-gray-950 lg:text-gray-200">
-                      <span className="absolute inset-0" />
-                      {callout.name}
-                    </h2>
-                    <p className="text-sm text-gray-800 lg:text-white">
-                      {callout.description}
-                    </p>
-                  </div>
-                </a>
-              </div>
-            ))}
+                  <a
+                    href={callout.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      alt={callout.imageAlt}
+                      src={callout.imageSrc}
+                      className="w-full rounded-lg object-contain max-sm:h-80 1lg:aspect-auto sm:aspect-auto"
+                    />
+                    <div className="gameInfo">
+                      <h2 className="mt-6 text-base font-semibold text-gray-950 lg:text-gray-200">
+                        <span className="absolute inset-0" />
+                        {callout.name}
+                      </h2>
+                      <p className="text-sm text-gray-800 lg:text-white">
+                        {callout.description}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+            {/* <Description /> */}
           </div>
-          {/* <Description /> */}
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,9 +1,38 @@
 import Rules from 'views/Rules';
 import MyLinks from '../MyLinks';
 import ShapeBlend from 'components/3Dobj/ShapeBlend';
+import { Helmet } from 'react-helmet-async';
 
 const HomeView = () => (
   <>
+    <Helmet>
+      <title>Hunt3R — Стрімер і Розробник 🎮💻</title>
+      <meta
+        name="description"
+        content="Hunt3R — український стрімер і розробник. Прямі трансляції ігор на Twitch, створення власних проєктів та інноваційні рішення в розробці. Дізнайся більше про Hunt3R та його роботу."
+      />
+      <link
+        rel="canonical"
+        href={(process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/'}
+      />
+      <meta property="og:title" content="Hunt3R — Streamer & Developer" />
+      <meta
+        property="og:description"
+        content="News, links, and projects from Hunt3R."
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:url"
+        content={(process.env.PUBLIC_URL || '').replace(/\/$/, '') + '/'}
+      />
+      <meta
+        property="og:image"
+        content={
+          (process.env.PUBLIC_URL || '').replace(/\/$/, '') +
+          '/hunter-cover.jpg'
+        }
+      />
+    </Helmet>
     <div className="relative isolate px-6 pt-14 lg:px-0 bg-white overflow-hidden">
       <ShapeBlend />
       <div
