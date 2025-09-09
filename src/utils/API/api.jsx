@@ -1,10 +1,16 @@
 import axios from 'axios';
 import { client_id, getToken } from './auth';
 
+const isPrerender = () =>
+  typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap';
+
 const baseURL = 'https://api.twitch.tv/helix';
 
 export const getHunt3r = async user => {
   try {
+    if (isPrerender()) {
+      return { data: [] };
+    }
     const token = await getToken();
 
     const userResponse = await axios.get(
@@ -23,16 +29,19 @@ export const getHunt3r = async user => {
     console.log('User Info:', userResponse.data);
     return userResponse.data;
   } catch (error) {
-    console.error(
-      'Error fetching user data:',
-      error.response?.data || error.message
-    );
+    console.error('Error fetching user data:', error.response?.data || error.message);
+    if (isPrerender()) {
+      return { data: [] };
+    }
     throw error;
   }
 };
 
 export const getUser = async (username, user) => {
   try {
+    if (isPrerender()) {
+      return { data: [] };
+    }
     const token = await getToken();
 
     const userResponse = await axios.get(
@@ -51,16 +60,19 @@ export const getUser = async (username, user) => {
     // console.log('User Info:', userResponse.data);
     return userResponse.data;
   } catch (error) {
-    console.error(
-      'Error fetching user data:',
-      error.response?.data || error.message
-    );
+    console.error('Error fetching user data:', error.response?.data || error.message);
+    if (isPrerender()) {
+      return { data: [] };
+    }
     throw error;
   }
 };
 
 export const getVideo = async id => {
   try {
+    if (isPrerender()) {
+      return { data: [] };
+    }
     const token = await getToken();
 
     const userResponse = await axios.get(
@@ -76,10 +88,10 @@ export const getVideo = async id => {
     // console.log('Video Info:', userResponse.data);
     return userResponse.data;
   } catch (error) {
-    console.error(
-      'Error fetching user data:',
-      error.response?.data || error.message
-    );
+    console.error('Error fetching user data:', error.response?.data || error.message);
+    if (isPrerender()) {
+      return { data: [] };
+    }
     throw error;
   }
 };
