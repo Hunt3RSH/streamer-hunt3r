@@ -59,11 +59,13 @@
     "inlineCss": false,
     "skipThirdPartyRequests": true,
     "routes": [
+      "/",
       "/setup",
       "/game",
       "/streamers",
       "/laststream",
-      "/commands"
+      "/commands",
+      "/about"
     ]
   }
 }
