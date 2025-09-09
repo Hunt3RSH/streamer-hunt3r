@@ -55,10 +55,10 @@
   "reactSnap": {
     "crawl": false,
     "puppeteerArgs": ["--no-sandbox"],
-    "fixWebpackChunksIssue": true,
+    "fixWebpackChunksIssue": "CRA2",
     "inlineCss": true,
+    "skipThirdPartyRequests": true,
     "routes": [
-      "/",
       "/setup",
       "/game",
       "/streamers",
