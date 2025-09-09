@@ -1,7 +1,16 @@
 import Spline from '@splinetool/react-spline';
 
-const isPrerender = () =>
-  typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap';
+const isPrerender = () => {
+  try {
+    if (typeof window !== 'undefined') {
+      if (window.ReactSnap || window.__react_snap__ || typeof window.snapSaveState === 'function') return true;
+    }
+    if (typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string') {
+      if (navigator.userAgent.indexOf('ReactSnap') !== -1) return true;
+    }
+  } catch (_) {}
+  return false;
+};
 
 export default function ShapeBlend() {
   if (isPrerender()) return null;

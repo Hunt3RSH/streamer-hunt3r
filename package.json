@@ -56,7 +56,7 @@
     "crawl": false,
     "puppeteerArgs": ["--no-sandbox"],
     "fixWebpackChunksIssue": "CRA2",
-    "inlineCss": true,
+    "inlineCss": false,
     "skipThirdPartyRequests": true,
     "routes": [
       "/setup",
