@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+Sitemap: https://hunt3rsh.github.io/streamer-hunt3r/sitemap.xml
